@@ -1,0 +1,5 @@
+{
+    "staticWebApps.appSubpath": "/home-one-page.html",
+    "staticWebApps.apiSubpath": "api",
+    "staticWebApps.outputSubpath": "./"
+}
