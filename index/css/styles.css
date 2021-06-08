@@ -1,0 +1,545 @@
+
+
+/*
+====================================================
+
+* 	[Master Stylesheet]
+	
+	Theme Name :  NGEN
+	Version    :  1.1
+	Author     :  Roman Ahmed
+	Author URI :  https://themeforest.net/user/desroman
+	
+====================================================
+
+	TOC:
+	=======
+	
+	1. PRIMARY STYLES
+		PAGE LOADER
+	2. PAGE CONTENT ON VISIBLE ANIMATIONS
+	3. MENU STYLING
+		LOGO
+		MAIN MENU
+		SLIDE PAGE ON MENU VISIBLE
+		TOGGLE CAKE ICON
+	4. FIXED ELEMENTS STYLINGS
+		PAGE NAIGATION NEXT PREV BUTTON
+		FIXED PHONE AND EMAIL WRITINGS
+		LEFT WRITING
+		RIGHT WRITING
+		FOOTER_WRITING
+	5. PAGEPILING SLIDING ANIMATIONS
+	6. FIRST AREA STYLING
+	7. SINGLE PAGE STYLING
+	8. PROJECTS AREA STYLING
+		PAGE ANIMATE CLICKING VIEW PROJECTS BUTTON
+		SINGLE PROJECTS STYLING
+		SWIPER STYLING FOR SINGLE PROJECT
+	9. PAGEPILING CUSTOM STYLING
+		PAGE ANIMATIONS
+		NAVIGATION
+
+===================================================== */
+
+
+/* ---------------------------------
+1. PRIMARY STYLES
+--------------------------------- */
+
+html { font-size: 100%; height: 100%; width: 100%; }
+
+body{ margin: 0; overflow-x: hidden; font-size: 15px; font-family: 'Open Sans', sans-serif;  word-wrap: break-word; 
+	-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale; }
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img{ margin: 0; padding: 0; }
+
+h1,h2,h3,h4,h5,h6,ul,a{ font-family: 'Titillium Web', sans-serif; font-weight: 300; }
+
+h1,h2,h3,h4,h5,h6{ font-weight: 400; line-height: 1.3; }
+
+p{ line-height: 1.6; font-weight: 300; }
+
+h1{ font-size: 6em; line-height: 1;  }
+h2{ font-size: 4em; }
+h3{ font-size: 2.2em; }
+h4{ font-size: 1.8em; }
+h5{ font-size: 1.2em; }
+h6{ font-size: .85em; letter-spacing: 2px; }
+
+a{ display: inline-block; text-decoration: none; color: inherit; }
+
+a:focus, a:active, a:hover { text-decoration: none; }
+
+b{ font-weight: 700; }
+
+img{ width: 100%; }
+
+.navbar{ font-weight: 300; letter-spacing: 2px; }
+
+li{ list-style: none; }
+
+input,textarea { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+
+/* PAGE LOADER */
+	
+.css-loader{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: #000; color: #fff; z-index: 99999; 
+	text-align: center; }
+
+.css-loader span{ font-size: .9em; animation: font-blur 5s infinite; margin: 0 4px; line-height: 100vh; }
+
+.css-loader span:nth-child(1){ animation-delay: 0s; }
+.css-loader span:nth-child(2){ animation-delay: .4s; }
+.css-loader span:nth-child(3){ animation-delay: .8s; }
+.css-loader span:nth-child(4){ animation-delay: 1.2s; }
+.css-loader span:nth-child(5){ animation-delay: 1.6s; }
+.css-loader span:nth-child(6){ animation-delay: 2s; }
+.css-loader span:nth-child(7){ animation-delay: 2.4s; }
+
+@keyframes font-blur{
+	0%{ filter: blur(0px); }
+	50%{ filter: blur(4px); }
+	100%{ filter: blur(0px); }
+}
+
+
+
+/* ---------------------------------
+2. PAGE CONTENT ON VISIBLE ANIMATIONS
+--------------------------------- */
+
+.to-top,
+.to-bottom,
+.to-left,
+.to-right,
+.scale-up,
+.scale-down,
+[data-animation-in],
+[data-animation-out]{ animation-duration: .6s; animation-timing-function: cubic-bezier(0.770, 0.01, 0.425, 0.820);
+	animation-fill-mode: forwards; opacity: 0; }
+
+
+.to-top{ animation-name: to-top-anim; }
+
+@keyframes to-top-anim{
+	0%{ opacity: 0; transform: translateY(60px); }
+	100%{ opacity: 1; transform: translateY(0px); }
+}
+.to-bottom{ animation-name: to-bottom-anim; }
+
+@keyframes to-bottom-anim{
+	0%{ opacity: 0; transform: translateY(-60px); }
+	100%{ opacity: 1; transform: translateY(0px); }
+}
+
+.to-left{ animation-name: to-left-anim; }
+
+@keyframes to-left-anim{
+	0%{ opacity: 0; transform: translateX(40%); }
+	100%{ opacity: 1; transform: translateX(0px); }
+}
+
+.to-right{ animation-name: to-right-anim; }
+
+@keyframes to-right-anim{
+	0%{ opacity: 0; transform: translateX(-40%); }
+	100%{ opacity: 1; transform: translateX(0px); }
+}
+
+.scale-up{ animation-name: scale-up-anim; }
+
+@keyframes scale-up-anim{
+	0%{ opacity: 0; transform: scale(.95); }
+	100%{ opacity: 1; transform: scale(1); }
+}
+
+.scale-down{ animation-name: scale-down-anim; }
+
+@keyframes scale-down-anim{
+	0%{ opacity: 0; transform: scale(1.05); }
+	100%{ opacity: 1; transform: scale(1); }
+}
+
+.to-opacity-1{ animation-name: to-opacity-1-anim; }
+
+@keyframes to-opacity-1-anim{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+.delay-2{ animation-delay: .7s; }
+.delay-3{ animation-delay: .85s; }
+.delay-4{ animation-delay: 1s; }
+
+
+/* ---------------------------------
+3. MENU STYLING
+--------------------------------- */
+
+header{ position: fixed; top: 20px; left: 0; right: 0; z-index: 10000; padding: 0 30px; }
+
+
+/* LOGO */
+
+.logo{ height: 40px; float: left; margin: 10px 0; position: relative; z-index: 1000; }
+
+.logo a{ display: block; height: 100%; }
+
+.logo img{ width: auto; height: 100%;  }
+
+
+/* MAIN MENU */
+
+.main-menu{ position: fixed; top: 0; height: 100%; width: 40%; z-index: 100; text-align: center; left: -40%; 
+	opacity: 1; overflow: hidden; transition: all .65s cubic-bezier(0.770, 0.05, 0.475, 0.870); display: table; }
+
+.menu-wrapper { display: table-cell; vertical-align: middle; }
+
+.main-menu.visible{ left: 0; }
+
+.menu-to-right{ animation: menu-to-right-anim .65s cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+
+@keyframes menu-to-right-anim{
+	0%{ transform: translateX(0%); }
+	100%{ transform: translateX(70%); }
+}
+
+.main-menu ul.nav-menu> li{ font-size: 2em; margin: 10px 0; letter-spacing: 5px; }
+
+.main-menu ul.nav-menu> li> .icons>li{ font-size: .5em; display: inline-block; margin: 30px 0px 10px; }
+
+.main-menu ul.nav-menu> li> .icons>li>a{ padding: 5px ; }
+
+
+/* SLIDE PAGE ON MENU VISIBLE */
+
+[data-slide-page-for-menu]{ transition: all .65s cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+	
+.page-slide-to-right{ transform: translateX(15%); }
+
+
+
+/* TOGGLE CAKE ICON */
+
+.nav-icon{ border-radius:0; border: 0; margin: 21.5px 0; height: 11px; width: 23px; position: relative; float: right;
+	background: none; cursor: pointer; z-index: 10000; transition: all .2s ease-in-out; margin-right: 15px; }
+
+.nav-icon:after{ content:''; position: absolute; top: -16px; bottom: -18px; right: -12px; left: -12px; z-index: -1; 
+	border-radius: 100px; border-width: 1px; border-style: solid; transition: all .4s ease-in-out; }
+
+.nav-icon:hover:after{ transform: scale(1.1); }
+
+.nav-icon span{ display: block; position: absolute; height: 1px; width: 100%; left: 0; transition: all .4s ease-in-out; }
+	
+.nav-icon span:nth-child(1){ top: 0; width: 80%; }
+
+.nav-icon span:nth-child(2){ top: 6px; }
+
+.nav-icon span:nth-child(3){ top: 12px; margin-left: 30%; width: 70%; }
+
+.nav-icon:hover span{ width: 100%; margin-left: 0; }
+
+.nav-icon.close-btn{ transform: rotate(-90deg); }
+
+.nav-icon.close-btn span{ width: 100%; margin-left: 0; }
+
+.nav-icon.close-btn span:nth-child(2){ opacity: 0; }
+	
+.nav-icon.close-btn span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+
+.nav-icon.close-btn span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+
+
+/* ---------------------------------
+4. FIXED ELEMENTS STYLINGS
+--------------------------------- */
+
+/* PAGE NAIGATION NEXT PREV BUTTON*/
+
+.page-nav-area{ position: fixed; bottom: 30px; right: 20px; height: 50px;  z-index: 20; }
+
+.page-nav-area .next,
+.page-nav-area .prev{ position: absolute; right: 0; text-align: right; }
+
+.page-nav-area .next{ bottom: -5px; transform: rotate(90deg); }
+
+.page-nav-area .prev{ top: -5px; transform: rotate(-90deg); }
+
+.page-nav-area i{ font-size: 2em; }
+
+
+/* FIXED PHONE AND EMAIL WRITINGS */
+
+.fixed-writing{  position: fixed; z-index: 20; }
+
+.fixed-writing a,
+.fixed-writing .copyright{ letter-spacing: 4px; }
+
+.fixed-writing .copyright{ margin-left: 20px; line-height: 14px; }
+
+.fixed-writing .copyright .cpy-icon{ height: 14px; width: 14px; margin-right: 10px; float: left; }
+
+
+/* LEFT WRITING */
+
+.left-writing{ top: 50%; left: 20px; line-height: 40px; margin-top: -20px;
+	transform-origin: left top; transform: rotate(-90deg) translateZ(0) translateX(-50%); }
+
+/* RIGHT WRITING */
+
+.right-writing{ top: 50%; right: 20px; line-height: 40px; margin-top: -20px;
+	transform-origin: right top; transform: rotate(90deg) translateZ(0) translateX(50%); }
+
+
+/* FOOTER_WRITING */
+
+.footer-writing{ bottom: 30px; }
+
+.footer-writing.left{ left: 60px; }
+
+.footer-writing.right{ right: 60px; }
+
+.footer-writing .icons{ margin-right: 20px; }
+
+.footer-writing .icons > li{ display: inline-block; }
+
+.footer-writing .icons > li > a{ padding: 0 5px; font-size: .85em; }
+
+
+
+/* ---------------------------------
+5. PAGEPILING SLIDING ANIMATIONS
+--------------------------------- */
+
+.bg-to-top-small,
+.bg-to-bottom-small,
+.content-to-top-small,
+.content-to-bottom-small,
+.bg-to-top,
+.bg-to-bottom,
+.content-to-top,
+.content-to-bottom{ animation-duration: .6s; animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+	
+.content-to-top{ animation-name: content-to-top-anim; }
+
+@keyframes content-to-top-anim{
+	0%{ transform: translateY(90%);}
+	100%{ transform: translateY(0%);}
+}
+
+.content-to-bottom{ animation-name: content-to-bottom-anim; }
+
+@keyframes content-to-bottom-anim{
+	0%{ transform: translateY(0%); }
+	100%{ transform: translateY(90%);}
+}
+
+.content-to-top-small{ animation-name: content-to-top-small-anim; }
+
+@keyframes content-to-top-small-anim{
+	0%{ transform: translateY(200px); }
+	100%{ transform: translateY(0%); }
+}
+
+.content-to-bottom-small{ animation-name: content-to-bottom-small-anim; }
+
+@keyframes content-to-bottom-small-anim{
+	0%{ transform: translateY(0%); }
+	100%{ transform: translateY(200px); }
+}
+
+.bg-to-top{ animation-name: bg-to-top-anim; }
+
+@keyframes bg-to-top-anim{
+	0%{ transform: translateY(90%); }
+	100%{ transform: translateY(0%); }
+}
+
+.bg-to-bottom{ animation-name: bg-to-bottom-anim; }
+
+@keyframes bg-to-bottom-anim{
+	0%{ transform: translateY(0%); }
+	100%{ transform: translateY(90%); }
+}
+
+.bg-to-top-small{ animation-name: bg-to-top-small-anim; }
+
+@keyframes bg-to-top-small-anim{
+	0%{ transform: translateY(200px); }
+	100%{ transform: translateY(0%); }
+}
+
+.bg-to-bottom-small{ animation-name: bg-to-bottom-small-anim; }
+
+@keyframes bg-to-bottom-small-anim{
+	0%{ transform: translateY(0%); }
+	100%{ transform: translateY(200px); }
+}
+
+
+/* ---------------------------------
+6. FIRST AREA STYLING
+--------------------------------- */
+
+#section-1 .name{ letter-spacing: 5px; }
+
+#section-1 .title{ margin: 20px 0 25px; display:inline-block; }
+
+#section-1 .about-me-btn{ font-weight: 800; transition: all .3s;border-bottom-width: 3px; border-bottom-style: solid; }
+	
+#section-1 .about-me-btn:hover{ transform: translateY(-4px);  }
+
+
+
+/* ---------------------------------
+7. SINGLE PAGE STYLING
+--------------------------------- */
+
+.single-page{ overflow: hidden; }
+ 
+.single-page-wrapper{ height: 100%; width: 100%; position: absolute; top: 0; overflow: hidden; }
+	
+.single-page-wrapper-2{ display: table; height: 100%; width: 100%; }
+
+.single-page-bg{ position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1; background-size: cover; 
+	overflow: hidden; background-position: center center; }
+	
+.single-page-bg:after{ content:'';  position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; }
+
+.content-wrapper{ display: table-cell; vertical-align: middle; transition: all .7s ease-in-out; 
+	text-align: center; padding: 0 20%; }
+
+.content-wrapper .title{ margin-bottom: 0px; font-weight: 900; }
+
+.content-wrapper .desc{ margin: 20px 0 40px; }
+
+.content-wrapper .projetcs-btn{ padding: 20px 35px; border-radius: 100px; font-weight: 900; transition: all .2s ease-in-out; }
+
+.content-wrapper .projetcs-btn:hover{ transform: translateY(5px); }
+
+
+
+/* ---------------------------------
+8. PROJECTS AREA STYLING
+--------------------------------- */
+
+/* PAGE ANIMATE CLICKING VIEW PROJECTS BUTTON*/
+
+.single-page-wrapper{ transition: all .65s cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+	
+.page-slide{ transform: translateX(-30%); cursor: url(../../images/close.png), auto; }
+
+.page-slide:after{ position: absolute; top: 0; bottom: 0; left: 0; right: 0; content:''; background: rgba(0,0,0,1); 
+	z-index: 100; opacity: 0; animation: bg-opcity-anim 1s forwards cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+	
+@keyframes bg-opcity-anim{
+	0%{ opacity: 0; }
+	100%{ opacity: .7; }
+}
+
+
+/* SINGLE PROJECTS STYLING */
+
+.projects{ position: absolute; top: 0; bottom: 0; left: 100%; width: 60%; overflow: hidden; z-index: 100;
+	cursor: n-resize; text-align: center; transition: left .65s cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+
+.project-close-btn{ display: none; }
+
+.visible-projects{ left: 40%; }
+
+.visible-projects .projects-content-wrapper{ 
+	animation: projects-content-wrapper-anim .65s forwards cubic-bezier(0.770, 0.05, 0.475, 0.870); }
+
+@keyframes projects-content-wrapper-anim{
+	0%{ transform: translateX(-95%);  }
+	100%{ transform: translateX(0%);  }
+}
+
+.projects-content-wrapper{ width: 100%; height: 100%; }
+
+.swiper-container { width: 100%; height: 100%; margin-left: auto; margin-right: auto; }
+
+.swiper-slide{ display: table; }
+
+.single-project-wrapper{ display: table-cell; vertical-align: middle; text-align: center; }
+
+.single-project{ position: relative; text-align: left; width: 60%; margin: 0 auto;  }
+
+.single-project img{ height: auto; width: 60%; }
+
+.single-project .p-info .title{ padding: 20px 0px 15px; }
+
+.single-project .p-info .info { padding: 5px 0; overflow: hidden; }
+
+.single-project .p-info .info span.left{ float: left; width: 150px; }
+
+.single-project .p-info .info span.right{ float: left; width: calc(100% - 150px); }
+	
+.single-project .p-info .info .details-btn{ font-weight: 700; margin: 15px 0; margin-right: 20px; }
+
+
+/* SWIPER STYLING FOR SINGLE PROJECT*/
+
+.swiper-container-vertical > .swiper-scrollbar{ top: 0; right: 0; background: none; height: 100%; }
+
+.swiper-scrollbar-drag{ border-radius: 2px; }
+
+
+
+
+/* ---------------------------------
+9. PAGEPILING CUSTOM STYLING
+--------------------------------- */
+
+/* PAGE ANIMATIONS */
+
+.pp-easing {
+    -webkit-transition: all 600ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -moz-transition: all 600ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -o-transition: all 600ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    transition: all 600ms cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    /* custom */
+    -webkit-transition-timing-function: cubic-bezier(0.770, 0.05, 0.475, 0.870);
+    -moz-transition-timing-function: cubic-bezier(0.770, 0.05, 0.475, 0.870);
+    -o-transition-timing-function: cubic-bezier(0.770, 0.05, 0.475, 0.870);
+    transition-timing-function:  cubic-bezier(0.770, 0.05, 0.475, 0.870);
+}
+
+
+/* NAVIGATION */
+
+#pp-nav{ bottom: 30px; z-index: 10; }
+
+#pp-nav.right {
+    left: 20px;
+}
+
+#pp-nav li, .pp-slidesNav li{
+	width: auto;
+	height: auto;	
+	margin: 0;
+}
+#pp-nav li>a, .pp-slidesNav li>a{
+	padding: 6px 0; 
+	height: 1px;
+	width: 15px;
+}
+#pp-nav span, .pp-slidesNav span{
+	height: 1px;
+	margin: 3px 0;
+	width: 100%;
+	border: 0;
+	border-radius: 0;
+	transition: all .2s ease-in-out;
+}
+#pp-nav li:hover span, .pp-slidesNav:hover span{
+	width: 23px; 
+}
+#pp-nav li .active span, .pp-slidesNav .active span{
+	width: 25px; 
+}
+
+

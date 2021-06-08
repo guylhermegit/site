@@ -1,0 +1,117 @@
+
+
+
+/* Screens Resolution : 992px
+-------------------------------------------------------------------------- */
+@media only screen and (min-width: 992px) {
+
+	
+
+}
+
+/* Screens Resolution : 992px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 992px) {
+
+
+	
+	/* BLOG AREA */
+
+	
+	
+}
+
+
+/* Screens Resolution : 767px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 769px) {
+	
+	/* ---------------------------------
+	1. PRIMARY STYLES
+	--------------------------------- */
+	
+	body{ font-size: 14px; }
+	
+	p{ line-height: 1.4; }
+
+	h1{ font-size: 3em; }
+	h2{ font-size: 2.5em; }
+	h3{ font-size: 1.8em; }
+	h4{ font-size: 1.5em; }
+	h5{ font-size: 1.2em; }
+
+	
+	
+	/* ---------------------------------
+	3. MENU STYLING
+	--------------------------------- */
+
+	header{ padding: 0 15px; }
+	
+	.main-menu{ width: 100%; left: -100%; }
+	
+	#pp-nav{ display: none; }
+
+	
+	
+	/* ---------------------------------
+	4. FIXED ELEMENTS STYLINGS
+	--------------------------------- */
+	
+	.fixed-writing{ display: none; }
+
+
+	
+	/* ---------------------------------
+	6. SINGLE PAGE STYLING
+	--------------------------------- */
+	
+	.content-wrapper{ transition: all .7s ease-in-out; text-align: center; padding: 0 15px; }
+	
+	
+	
+	/* ---------------------------------
+	7. PROJECTS AREA STYLING
+	--------------------------------- */
+	
+	/* SINGLE PROJECTS STYLING */
+	
+	.projects{ width: 100%;  }
+	
+	.project-close-btn{ display: block; width: 100%; position: absolute; bottom: 30px; z-index: 100; font-size: 1.2em; }
+	
+	.visible-projects{ left: 0%; }
+	
+	.single-project{ width: 90%; padding: 0 5%; }
+	
+	.single-project img{ width: 100%; }
+	
+}
+
+/* Screens Resolution : 479px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 479px) {
+
+	/* ---------------------------------
+	1. PRIMARY STYLES
+	--------------------------------- */
+
+	body{ font-size: 12px; }
+
+}
+
+/* Screens Resolution : 359px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 359px) {
+	
+	
+}
+
+/* Screens Resolution : 290px
+-------------------------------------------------------------------------- */
+@media only screen and (max-width: 290px) {
+	
+	/* LOGO */
+	
+	
+}
