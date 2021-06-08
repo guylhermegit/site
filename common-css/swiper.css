@@ -38,7 +38,7 @@
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
+  display: -webkit-inline-box!important;
   display: flex;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
